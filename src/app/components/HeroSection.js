@@ -41,17 +41,17 @@ export default function HeroSection() {
 
   return (
     <header className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-      {/* Radial glow */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.14),transparent)]" />
+      {/* Radial glow — kept very faint so it doesn't lift the background */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.07),transparent)]" />
 
       {/* Subtle grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      {/* USF bull watermark */}
+      {/* USF bull — slowly rotates, centered behind content */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
         <svg
           viewBox="0 0 200 200"
-          className="w-[560px] h-[560px] text-white opacity-[0.06]"
+          className="bull-spin w-[680px] h-[680px] text-white opacity-[0.12]"
           fill="currentColor"
         >
           {/* Left horn */}
@@ -76,12 +76,12 @@ export default function HeroSection() {
         </p>
 
         {/* Name */}
-        <h1 className="fade-in-up-1 text-6xl sm:text-7xl font-bold text-gray-100 tracking-tight leading-none mb-6">
+        <h1 className="fade-in-up-1 text-6xl sm:text-7xl font-bold text-white tracking-tight leading-none mb-6">
           Logan Pfeiffer
         </h1>
 
         {/* Tagline with typing effect */}
-        <p className="fade-in-up-2 text-lg sm:text-xl text-gray-400 max-w-xl mx-auto leading-relaxed mb-10">
+        <p className="fade-in-up-2 text-lg sm:text-xl text-gray-300 max-w-xl mx-auto leading-relaxed mb-10">
           USF junior turning{' '}
           <span className="text-blue-400 font-medium inline-flex items-center gap-0.5">
             {displayed}
