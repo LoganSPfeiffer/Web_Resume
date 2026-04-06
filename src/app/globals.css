@@ -17,14 +17,15 @@
     animation: fadeInUp 0.6s ease-out 0.6s both;
   }
   .hero-gradient {
-    background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 50%, #0f172a 100%);
+    background: linear-gradient(-45deg, #020817, #04101e, #0a0618, #040d1c, #020817);
+    background-size: 400% 400%;
+    animation: gradientShift 18s ease infinite;
+  }
+  .bull-spin {
+    animation: bullSpin 60s linear infinite;
   }
   .cursor-blink {
     animation: blink 1s step-end infinite;
-  }
-  .logo-spin {
-    animation: coinSpin 8s linear infinite;
-    transform-style: preserve-3d;
   }
 }
 
@@ -39,12 +40,18 @@
   }
 }
 
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
 
-@keyframes coinSpin {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
+@keyframes bullSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
