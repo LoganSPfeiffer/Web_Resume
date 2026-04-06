@@ -59,7 +59,7 @@ export default function Navbar() {
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   active === id
                     ? 'text-blue-400 bg-blue-400/10'
-                    : 'text-gray-400 hover:text-gray-100 hover:bg-gray-800/60'
+                    : 'text-white hover:text-white hover:bg-white/10'
                 }`}
               >
                 {label}
