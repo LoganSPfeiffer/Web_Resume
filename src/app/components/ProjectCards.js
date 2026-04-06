@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const PROJECTS = [
   {
@@ -39,20 +39,37 @@ const PROJECTS = [
 
 export default function ProjectCards() {
   const [expanded, setExpanded] = useState(null)
+  const [visible, setVisible] = useState(false)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+    if (containerRef.current) observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <div className="grid sm:grid-cols-3 gap-4">
+    <div ref={containerRef} className="grid sm:grid-cols-3 gap-4">
       {PROJECTS.map((project, i) => {
         const isOpen = expanded === i
         return (
           <button
             key={project.title}
             onClick={() => setExpanded(isOpen ? null : i)}
-            className={`text-left rounded-xl border p-5 transition-all duration-300 w-full ${
+            className={`text-left rounded-xl border p-5 w-full transition-all duration-500 ease-out ${
               isOpen
                 ? 'border-blue-500 bg-gray-900 shadow-lg shadow-blue-500/10'
                 : 'border-gray-800 bg-gray-900 hover:border-blue-500/50 hover:scale-[1.02]'
-            }`}
+            } ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            style={{ transitionDelay: `${i * 120}ms` }}
           >
             <div className="flex items-start justify-between gap-2 mb-3">
               <h3 className="text-gray-100 font-semibold text-sm leading-snug">{project.title}</h3>
@@ -64,6 +81,7 @@ export default function ProjectCards() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
