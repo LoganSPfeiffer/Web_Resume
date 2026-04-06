@@ -1,7 +1,21 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+  }
+  .fade-in-up-1 {
+    animation: fadeInUp 0.6s ease-out 0.15s both;
+  }
+  .fade-in-up-2 {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+  .fade-in-up-3 {
+    animation: fadeInUp 0.6s ease-out 0.45s both;
+  }
+  .fade-in-up-4 {
+    animation: fadeInUp 0.6s ease-out 0.6s both;
+  }
 }
 
 @keyframes fadeInUp {
@@ -13,20 +27,4 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
-}
-.fade-in-up-1 {
-  animation: fadeInUp 0.6s ease-out 0.15s both;
-}
-.fade-in-up-2 {
-  animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-.fade-in-up-3 {
-  animation: fadeInUp 0.6s ease-out 0.45s both;
-}
-.fade-in-up-4 {
-  animation: fadeInUp 0.6s ease-out 0.6s both;
 }

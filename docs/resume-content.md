@@ -13,7 +13,7 @@ Business Analytics and Information Systems junior at USF with a finance minor, p
 ## Education
 - University of South Florida, Tampa, FL
 - B.S. Business Analytics & Information Systems, Minor in Finance
-- Expected: December 2026
+- Expected: May 2027
 - GPA: 3.47
 - Relevant Coursework: Data Analytics for Business, Database Design & Administration, AI & Analytics for Organizations, Principles of Management, Business Intelligence, Systems Analysis & Design
 
