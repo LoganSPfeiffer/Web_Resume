@@ -16,6 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -37,7 +38,11 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-black/20">
+    <nav className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-300 ${
+      scrolled
+        ? 'bg-gray-950/90 backdrop-blur-md border-gray-800 shadow-lg shadow-black/20'
+        : 'bg-transparent border-transparent'
+    }`}>
       <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="#"
@@ -53,7 +58,9 @@ export default function Navbar() {
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   active === id
                     ? 'text-blue-400 bg-blue-400/10'
-                    : 'text-white hover:text-white hover:bg-white/10'
+                    : scrolled
+                      ? 'text-white hover:text-white hover:bg-white/10'
+                      : 'text-gray-800 hover:text-gray-900 hover:bg-black/10'
                 }`}
               >
                 {label}
