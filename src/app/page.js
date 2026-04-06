@@ -27,7 +27,7 @@ export default function Page() {
               {[
                 { label: 'GPA', value: '3.47' },
                 { label: 'University', value: 'USF Tampa' },
-                { label: 'Graduating', value: 'May 2027' },
+                { label: 'Graduating', value: 'Dec 2026' },
                 { label: 'Minor', value: 'Finance' },
               ].map(({ label, value }) => (
                 <div key={label} className="rounded-xl bg-gray-900 border border-gray-800 px-5 py-4">
@@ -57,7 +57,7 @@ export default function Page() {
                   <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
                     GPA 3.47
                   </span>
-                  <p className="text-gray-500 text-sm mt-2">Expected May 2027</p>
+                  <p className="text-gray-500 text-sm mt-2">Expected December 2026</p>
                 </div>
               </div>
               <div>
