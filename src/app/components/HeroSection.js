@@ -43,9 +43,7 @@ export default function HeroSection() {
     <header
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        background: 'linear-gradient(-45deg, #020817, #04101e, #0a0618, #040d1c, #020817)',
-        backgroundSize: '400% 400%',
-        animation: 'gradientShift 18s ease infinite',
+        background: 'linear-gradient(to bottom, #e2e8f0, #94a3b8, #1e293b, #020817)',
       }}
     >
       {/* Radial glow — kept very faint so it doesn't lift the background */}
