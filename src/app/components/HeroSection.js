@@ -40,7 +40,14 @@ export default function HeroSection() {
   }, [displayed, deleting, paused, wordIdx])
 
   return (
-    <header className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
+    <header
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        background: 'linear-gradient(-45deg, #020817, #04101e, #0a0618, #040d1c, #020817)',
+        backgroundSize: '400% 400%',
+        animation: 'gradientShift 18s ease infinite',
+      }}
+    >
       {/* Radial glow — kept very faint so it doesn't lift the background */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.07),transparent)]" />
 
