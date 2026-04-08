@@ -41,18 +41,15 @@ export default function HeroSection() {
 
   return (
     <header
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[110vh] flex items-center justify-center overflow-hidden"
       style={{
-        background: 'linear-gradient(to bottom, #e2e8f0, #94a3b8, #1e293b, #020817)',
+        background: 'linear-gradient(to bottom, #e2e8f0 0%, #cbd5e1 20%, #64748b 50%, #1e293b 75%, #020817 100%)',
       }}
     >
       {/* Radial glow — kept very faint so it doesn't lift the background */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.07),transparent)]" />
 
-      {/* Subtle grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)] bg-[size:64px_64px]" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 text-center">
         {/* Eyebrow */}
         <p className="fade-in-up text-blue-400 font-bold text-xs tracking-[0.2em] uppercase mb-7">
           Business Analytics &amp; FinTech
@@ -127,13 +124,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-600" aria-hidden="true">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
     </header>
   )
 }
